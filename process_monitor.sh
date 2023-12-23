@@ -112,7 +112,7 @@ monitor_processes() {
 
         # Display alerts if thresholds exceeded
         if [ ! -z "$high_cpu_processes" ]; then
-            echo -e "\e[31m⚠️ High CPU usage alert! Processes:\e[0m"
+            echo -e "\e[31m⚠️ Alert: Processes exceeding CPU usage threshold (${CPU_ALERT_THRESHOLD}%):\e[0m"
             echo "$high_cpu_processes"
             echo -e "\e[31m----------------------------\e[0m"
             log_activity "High CPU usage alert!"
@@ -120,7 +120,7 @@ monitor_processes() {
         fi
 
         if [ ! -z "$high_mem_processes" ]; then
-            echo -e "\e[31m⚠️ High memory usage alert! Processes:\e[0m"
+            echo -e "\e[31m⚠️ Alert: Processes exceeding Memory usage threshold (${MEMORY_ALERT_THRESHOLD}%): \e[0m"
             echo "$high_mem_processes"
             echo -e "\e[31m----------------------------\e[0m"
             log_activity "High memory usage alert!"
